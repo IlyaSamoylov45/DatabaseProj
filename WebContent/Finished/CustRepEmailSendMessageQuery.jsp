@@ -70,7 +70,7 @@
 				String temp = "SELECT * FROM Account WHERE BINARY username = BINARY '" + reciever + "'";		
 				ResultSet result = stmt.executeQuery(temp);
 				if(result.next()){
-					java.sql.Date sqlDate = new java.sql.Date(new java.util.Date().getTime());
+					java.sql.Timestamp sqlDate = new java.sql.Timestamp(new java.util.Date().getTime());
 					
 					//get the current max id
 					String maxID = "SELECT MAX(`messageID`) FROM `Email`";
@@ -91,7 +91,7 @@
 					send_email_ps.setInt(1, new_ID);
 					send_email_ps.setString(2, sender);
 					send_email_ps.setString(3, reciever);
-					send_email_ps.setDate(4, sqlDate);
+					send_email_ps.setTimestamp(4, sqlDate);
 					send_email_ps.setString(5, content);
 					send_email_ps.setString(6, subject);
 					

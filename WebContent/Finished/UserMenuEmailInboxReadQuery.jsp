@@ -20,7 +20,7 @@
 		String reciever = request.getParameter("reciever");
 		String content = request.getParameter("content");
 		String subject = request.getParameter("subject");
-	    java.sql.Date sqlDate = new java.sql.Date(new java.util.Date().getTime());
+	    java.sql.Timestamp sqlDate = new java.sql.Timestamp(new java.util.Date().getTime());
 		
 		try{
 			//Get the database connection
@@ -47,7 +47,7 @@
 			email_insert.setInt(1, new_ID);
 			email_insert.setString(2, sender);
 			email_insert.setString(3, reciever);
-			email_insert.setDate(4, sqlDate);
+			email_insert.setTimestamp(4, sqlDate);
 			email_insert.setString(5, content);
 			email_insert.setString(6, subject);
 			
