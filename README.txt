@@ -1,25 +1,22 @@
-
-
-
 Credit:
 									Database
-___________________________________________________________________________
-Database Design and Coding other Than Triggers:				Ilya Samoylov
+______________________________________________________________________________________________________________________________________________________
+Database Design and Coding other Than Triggers:					Ilya Samoylov
 Triggers:
 
 									 Admin
-___________________________________________________________________________
-AdminMenu.jsp: 												Ilya Samoylov
+______________________________________________________________________________________________________________________________________________________
+AdminMenu.jsp:					Ilya Samoylov
 
-AdminMiscellaneous.jsp										Ilya Samoylov
-AdminMiscellaneousEmails.jsp 								Ilya Samoylov
-AdminMiscellaneousEmailsRead.jsp 							Ilya Samoylov
-AdminMiscellaneousQuestions.jsp								Ilya Samoylov
-AdminMiscellaneousQuestionsView.jsp							Ilya Samoylov
+AdminMiscellaneous.jsp					Ilya Samoylov
+AdminMiscellaneousEmails.jsp					Ilya Samoylov
+AdminMiscellaneousEmailsRead.jsp					Ilya Samoylov
+AdminMiscellaneousQuestions.jsp					Ilya Samoylov
+AdminMiscellaneousQuestionsView.jsp					Ilya Samoylov
 
-AdminUsersInformationMenu.jsp								Ilya Samoylov
-AdminUsersInformationMenuAllCustomerRepresentatives.jsp		Ilya Samoylov
-AdminUsersInformationMenuAllUsers.jsp						Ilya Samoylov	
+AdminUsersInformationMenu.jsp					Ilya Samoylov
+AdminUsersInformationMenuAllCustomerRepresentatives.jsp					Ilya Samoylov
+AdminUsersInformationMenuAllUsers.jsp					Ilya Samoylov	
 AdminUsersInformationMenuNewUser.jsp						Ilya Samoylov
 AdminUsersInformationMenuNewUserQuery.jsp					Ilya Samoylov
 
@@ -57,7 +54,7 @@ CustRepUserInfoChangeOneQuery.jsp							Ilya Samoylov
 CustRepUserInfoChangeQuery.jsp								Ilya Samoylov
 
 						Login/Logout/Creating Users
-___________________________________________________________________________
+______________________________________________________________________________________________________________________________________________________
 Login.jsp													Ilya Samoylov
 LoginQuery.jsp												Ilya Samoylov
 LogOutAdmin.jsp												Ilya Samoylov
@@ -70,7 +67,7 @@ newUser.jsp													Ilya Samoylov
 newUserQuery.jsp											Ilya Samoylov
 
 								End User
-___________________________________________________________________________
+______________________________________________________________________________________________________________________________________________________
 UserMenu.jsp												Ilya Samoylov
 
 UserMenuAuctionsSell.jsp									Ilya Samoylov
@@ -80,7 +77,8 @@ UserMenuAuctionsSellMature.jsp                              Ilya Samoylov
 UserMenuAuctionsSellMatureQuery.jsp                         Ilya Samoylov
 UserMenuAuctionsSellTeen.jsp								Ilya Samoylov
 UserMenuAuctionsSellTeenQuery.jsp							Ilya Samoylov
-
+UserMenuAuctionsCurrentlySelling.jsp
+UserMenuAuctionsCurrentlySellingMore.jsp
 UserMenuEmail.jsp											Ilya Samoylov
 UserMenuEmailInbox.jsp										Ilya Samoylov
 UserMenuEmailInboxRead.jsp									Ilya Samoylov
