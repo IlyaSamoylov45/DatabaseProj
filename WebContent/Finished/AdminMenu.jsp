@@ -31,6 +31,12 @@
 			</form>
 		</center>
 		<center>
+			<font size = "5" color = "0e5938" >Look Summary Reports!</font>
+			<form method="post" action="SummaryReports.jsp">
+				<input type="submit" value="View">
+			</form>
+		</center>
+		<center>
 			<br>
 			<form method="post" action="LogOutAdmin.jsp">
 				<input type="submit" value="Logout">

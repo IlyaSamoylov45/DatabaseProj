@@ -58,7 +58,6 @@
 	     	   		<td>Initial Price</td>
 	     	   		<td>Minimum Increase</td>
 	      	   		<td>Buyer </td>
-	      	   		<td>Seller</td>
 	      	   		
 	      	   		<td>Minimum sell Price</td>
 	      	   		<td>Sell Time</td>

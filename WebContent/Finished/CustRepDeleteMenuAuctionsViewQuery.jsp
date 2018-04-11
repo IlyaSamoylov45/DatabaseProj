@@ -26,7 +26,7 @@
 			Statement stmt = con.createStatement();		
 		
 			//Check for username
-			String temp = "DELETE FROM `Auction` WHERE `auctionID` = BINARY ?";		
+			String temp = "DELETE FROM `Auction` WHERE `auctionID` = ?";		
 			
 			PreparedStatement ps = con.prepareStatement(temp);
 			ps.setString(1, auctionID);

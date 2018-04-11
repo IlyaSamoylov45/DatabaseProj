@@ -18,7 +18,17 @@
 	<%
 		try{
 			
-		    java.sql.Timestamp sqlDate = new java.sql.Timestamp(new java.util.Date().getTime());
+			java.util.Date startDate = new java.util.Date();
+		    java.sql.Timestamp sqlDate = new java.sql.Timestamp(startDate.getTime());
+		    
+		    java.util.Date endDate = startDate;
+		    Calendar endTime_cal = Calendar.getInstance(); 
+		    endTime_cal.setTime(endDate); 
+		    endTime_cal.add(Calendar.DATE, 14);
+		    
+		    endDate = endTime_cal.getTime();
+		    java.sql.Timestamp sqlDateEnd = new java.sql.Timestamp(endDate.getTime());
+			
 			String game_name = request.getParameter("gameName");
 			String genre = request.getParameter("genre");
 			String platform = request.getParameter("platform");
@@ -151,7 +161,7 @@
 					create_auction.setInt(1, 0);
 					create_auction.setInt(2, new_gameID);
 					create_auction.setTimestamp(3, sqlDate);
-					create_auction.setTimestamp(4, null);
+					create_auction.setTimestamp(4, sqlDateEnd);
 					create_auction.setFloat(5, initial_price);
 					create_auction.setFloat(6, minimum_increase);
 					create_auction.setString(7, null);
@@ -176,7 +186,7 @@
 					create_auction.setInt(1, 0);
 					create_auction.setInt(2, gameID);
 					create_auction.setTimestamp(3, sqlDate);
-					create_auction.setTimestamp(4, null);
+					create_auction.setTimestamp(4, sqlDateEnd);
 					create_auction.setFloat(5, initial_price);
 					create_auction.setFloat(6, minimum_increase);
 					create_auction.setString(7, null);

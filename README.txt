@@ -1,27 +1,30 @@
 Credit:
 									Database
-______________________________________________________________________________________________________________________________________________________
-Database Design and Coding other Than Triggers:					Ilya Samoylov
+_______________________________________________________________________________________
+Database Design and Coding other Than Triggers:				Ilya Samoylov
 Triggers:
 
 									 Admin
-______________________________________________________________________________________________________________________________________________________
-AdminMenu.jsp:					Ilya Samoylov
+_______________________________________________________________________________________
+AdminMenu.jsp: 												Ilya Samoylov
 
-AdminMiscellaneous.jsp					Ilya Samoylov
-AdminMiscellaneousEmails.jsp					Ilya Samoylov
-AdminMiscellaneousEmailsRead.jsp					Ilya Samoylov
-AdminMiscellaneousQuestions.jsp					Ilya Samoylov
-AdminMiscellaneousQuestionsView.jsp					Ilya Samoylov
+AdminMiscellaneous.jsp										Ilya Samoylov
+AdminMiscellaneousEmails.jsp 								Ilya Samoylov
+AdminMiscellaneousEmailsRead.jsp 							Ilya Samoylov
+AdminMiscellaneousQuestions.jsp								Ilya Samoylov
+AdminMiscellaneousQuestionsView.jsp							Ilya Samoylov
 
-AdminUsersInformationMenu.jsp					Ilya Samoylov
-AdminUsersInformationMenuAllCustomerRepresentatives.jsp					Ilya Samoylov
-AdminUsersInformationMenuAllUsers.jsp					Ilya Samoylov	
+AdminUsersInformationMenu.jsp								Ilya Samoylov
+AdminUsersInformationMenuAllCustomerRepresentatives.jsp		Ilya Samoylov
+AdminUsersInformationMenuAllUsers.jsp						Ilya Samoylov	
 AdminUsersInformationMenuNewUser.jsp						Ilya Samoylov
 AdminUsersInformationMenuNewUserQuery.jsp					Ilya Samoylov
 
+SummaryReports.jsp											Ilya Samoylov
+
+
 							 Customer Representative
-___________________________________________________________________________
+_______________________________________________________________________________________
 CustRepDeleteMenu.jsp										Ilya Samoylov
 CustRepDeleteMenuAuctions.jsp								Ilya Samoylov
 CustRepDeleteMenuAuctionsView.jsp							Ilya Samoylov
@@ -54,7 +57,7 @@ CustRepUserInfoChangeOneQuery.jsp							Ilya Samoylov
 CustRepUserInfoChangeQuery.jsp								Ilya Samoylov
 
 						Login/Logout/Creating Users
-______________________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________
 Login.jsp													Ilya Samoylov
 LoginQuery.jsp												Ilya Samoylov
 LogOutAdmin.jsp												Ilya Samoylov
@@ -67,7 +70,7 @@ newUser.jsp													Ilya Samoylov
 newUserQuery.jsp											Ilya Samoylov
 
 								End User
-______________________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________
 UserMenu.jsp												Ilya Samoylov
 
 UserMenuAuctionsSell.jsp									Ilya Samoylov
@@ -77,8 +80,14 @@ UserMenuAuctionsSellMature.jsp                              Ilya Samoylov
 UserMenuAuctionsSellMatureQuery.jsp                         Ilya Samoylov
 UserMenuAuctionsSellTeen.jsp								Ilya Samoylov
 UserMenuAuctionsSellTeenQuery.jsp							Ilya Samoylov
-UserMenuAuctionsCurrentlySelling.jsp
-UserMenuAuctionsCurrentlySellingMore.jsp
+UserMenuAuctionsCurrentlySelling.jsp						Ilya Samoylov
+UserMenuAuctionsCurrentlySellingMore.jsp					Ilya Samoylov
+UserMenuAuctionsHistory.jsp									Ilya Samoylov
+UserMenuAuctionsBuy.jsp										Ilya Samoylov
+UserMenuAuctionsBuySearch.jsp								Ilya Samoylov
+UserMenuAuctionsBuySearchDone.jsp							Ilya Samoylov
+UserMenuAuctionsBuySearchDoneView.jsp						Ilya Samoylov
+
 UserMenuEmail.jsp											Ilya Samoylov
 UserMenuEmailInbox.jsp										Ilya Samoylov
 UserMenuEmailInboxRead.jsp									Ilya Samoylov

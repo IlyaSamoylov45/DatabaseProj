@@ -28,6 +28,9 @@
 		<center>
 		<%
 		String username = (String)session.getAttribute("userName");
+		
+		java.util.Date nowDate = new java.util.Date();
+	    java.sql.Timestamp nowDatesql = new java.sql.Timestamp(nowDate.getTime());
 		%>
 			<font size = "5" color = "0e5938" >Click to view more information about the auction: <%=username %></font>
 			<table border="2">
@@ -48,7 +51,7 @@
 					Statement stmt = con.createStatement();		
 			
 					//Check for username
-					String temp = "SELECT A.*, V.game_name FROM Auction A, VideoGame V WHERE A.gameID = V.gameID AND A.seller = '" + username +"'";		
+					String temp = "SELECT A.*, V.game_name FROM Auction A, VideoGame V WHERE A.gameID = V.gameID AND BINARY A.seller = BINARY '" + username +"' AND A.dateClosing > '" + nowDatesql +"'" ;		
 					ResultSet UserSelling_auctions = stmt.executeQuery(temp);
 				
        				while(UserSelling_auctions.next()){
@@ -85,7 +88,7 @@
 						<td><%=game_name %></td>
 						<td><textarea name="content" rows="5" cols="20" readonly><%=information %></textarea></td>		
 						<td>
-							<form method="post" action="UserMenuAuctionsCurrentlySellingMore">
+							<form method="post" action="UserMenuAuctionsCurrentlySellingMore.jsp">
 								<input type="hidden" name="auctionID" value="<%= auctionID %>" />
 								<input type="hidden" name="gameID" value="<%= gameID %>" />
 								<input type="hidden" name="dateCreated" value="<%= dateCreated %>" />
@@ -124,7 +127,7 @@
 	<center>
 	
 		<br>
-		<form method="post" action="UserMenuAuctions">
+		<form method="post" action="UserMenuAuctions.jsp">
 			<input type="submit" value="Back">
 		</form>
 		

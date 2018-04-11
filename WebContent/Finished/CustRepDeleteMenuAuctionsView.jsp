@@ -101,7 +101,7 @@
 
 		<center>
 		<br>
-			<form method="post" action="CustRepDeleteAuctions.jsp">
+			<form method="post" action="CustRepDeleteMenuAuctions.jsp">
 				<input type="submit" value="Back">
 			</form>
 			
