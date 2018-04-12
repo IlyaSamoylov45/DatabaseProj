@@ -90,7 +90,7 @@
 		   	</form>	
 		   	<br>
 			<form method="post" action="UserMenuAuctionsQuestions.jsp">
-				<input type="hidden" name="auctionID" value="<%= auctionID %>" />
+				<input type="hidden" name="auctionIDswitch" value="<%= auctionID %>" />
 				<input type="hidden" name="rating" value="<%= rating %>" />
 		   		<input id="button" type="submit" value="Ask" >
 		   	</form>	

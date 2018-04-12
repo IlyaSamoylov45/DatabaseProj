@@ -26,26 +26,12 @@
 			// makes sure that no entries are null
 			if(content.equals("") || question.equals("")) {
 				out.print("Every Field is Mandatory. Try again. "); 
-				%>	
-						<form method="post" action="UserMenuBuyAuctionBackQuery.jsp">
-							<input type="hidden" name="auctionID" value="<%= auctionIDswitch %>" />
-							<input type="hidden" name="rating" value="<%= rating %>" />
-							<input id="button" type="submit" value="Back" >
-						</form>
-					<%
 				badInput = true;
 			}
 			
 			// makes sure that no entries go over the 50 character alloted by the program
 			if(question.length() > 50){
 				out.print("Question length too long"); 
-				 %>	
-					<form method="post" action="UserMenuBuyAuctionBackQuery.jsp">
-						<input type="hidden" name="auctionID" value="<%= auctionIDswitch %>" />
-						<input type="hidden" name="rating" value="<%= rating %>" />
-						<input id="button" type="submit" value="Back" >
-					</form>
-				<%
 				badInput = true;
 			}
 			
@@ -86,26 +72,10 @@
 				
 			}else{
 				out.print("Question answered successfully "); 
-				 %>
-					
-					<form method="post" action="UserMenuBuyAuctionBackQuery.jsp">
-						<input type="hidden" name="auctionID" value="<%= auctionIDswitch %>" />
-						<input type="hidden" name="rating" value="<%= rating %>" />
-						<input id="button" type="submit" value="Back" >
-					</form>
-				<%
 			}		
 
 			
-			out.print("Question answered successfully "); %>
-			
-			<form method="post" action="UserMenuBuyAuctionBackQuery.jsp">
-				<input type="hidden" name="auctionID" value="<%= auctionIDswitch %>" />
-				<input type="hidden" name="rating" value="<%= rating %>" />
-				<input id="button" type="submit" value="Back" >
-			</form>
-			
-			<%
+			out.print("Question answered successfully "); 
 		} catch (Exception ex) {
 			out.print("Error. Something went wrong sending the message");
 			out.print(ex);
@@ -113,7 +83,7 @@
 		%>
 		<br>		
 		<form method="post" action="UserMenuBuyAuctionBackQuery.jsp">
-				<input type="hidden" name="auctionID" value="<%= auctionIDswitch %>" />
+				<input type="hidden" name="auctionIDswitch" value="<%= auctionIDswitch %>" />
 				<input type="hidden" name="rating" value="<%= rating %>" />
 				<input id="button" type="submit" value="Back" >
 			</form>

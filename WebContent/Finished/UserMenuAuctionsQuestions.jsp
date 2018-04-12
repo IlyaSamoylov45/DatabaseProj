@@ -34,7 +34,7 @@
 					</tr>
 				</table>
 				<input type="submit" value="Send">
-				<input type="hidden" name="auctionID" value="<%= auctionIDswitch %>" />
+				<input type="hidden" name="auctionIDswitch" value="<%= auctionIDswitch %>" />
 				<input type="hidden" name="rating" value="<%= rating %>" />
 				<input type="reset" value="Reset" />
 			</form>
@@ -51,7 +51,7 @@
 			</font>
 			<br>
 			<form method="post" action="UserMenuBuyAuctionBackQuery.jsp">
-				<input type="hidden" name="auctionID" value="<%= auctionIDswitch %>" />
+				<input type="hidden" name="auctionIDswitch" value="<%= auctionIDswitch %>" />
 				<input type="hidden" name="rating" value="<%= rating %>" />
 				<input id="button" type="submit" value="Back" >
 			</form>
