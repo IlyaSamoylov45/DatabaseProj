@@ -95,7 +95,10 @@ UserMenuBuyAuctionBackQuery.jsp								Ilya Samoylov
 
 PlaceBid.jsp												Ilya Samoylov
 PlaceBidQuery.jsp											Ilya Samoylov
+PlaceAutoBidQuery.jsp										Ilya Samoylov
 Similar.jsp													Ilya Samoylov
+UserMenuAuctionsQuestions.jsp								Ilya Samoylov
+UserMenuAuctionsQuestionsQuery.jsp.jsp						Ilya Samoylov
 
 UserMenuEmail.jsp											Ilya Samoylov
 UserMenuEmailInbox.jsp										Ilya Samoylov

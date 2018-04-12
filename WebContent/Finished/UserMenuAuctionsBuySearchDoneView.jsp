@@ -88,6 +88,12 @@
 				<input type="hidden" name="game_name" value="<%= game_name %>" />
 		   		<input id="button" type="submit" value="Similar" >
 		   	</form>	
+		   	<br>
+			<form method="post" action="UserMenuAuctionsQuestions.jsp">
+				<input type="hidden" name="auctionID" value="<%= auctionID %>" />
+				<input type="hidden" name="rating" value="<%= rating %>" />
+		   		<input id="button" type="submit" value="Ask" >
+		   	</form>	
 			<center>
 				<font size = "13" color = "0e5938" >Bidding History</font>
 			</center>
