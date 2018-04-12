@@ -16,21 +16,21 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>User History</title>
+		<title>User History not yourself</title>
 	</head>
-
+		<%
+		String auctionIDswitch  = request.getParameter("auctionID");
+		String bidder = request.getParameter("bidder");
+		String rating = request.getParameter("rating");
+		%>
 	<body>
 		<center>
-			<font size = "13" color = "0e5938" >Auction History As Seller</font>
+			<font size = "13" color = "0e5938" >Auction History Of User: <%=bidder %></font>
 		</center>
 
 		<br>
-		<%
-		String username = (String)session.getAttribute("userName");
-		
-		%>
 		<center>
-			<font size = "5" color = "0e5938" >Information about the auction: <%=username %> where you were seller</font>
+			<font size = "5" color = "0e5938" >Information about the auction: <%=bidder %> where you were seller</font>
 			<table border="2">
    			<tr>
        			<td>AuctionID</td>
@@ -41,7 +41,7 @@
         		<td>Initial Price</td>
         		<td>Minimum Increase</td>
         		<td>Sell Time</td>
-        		<td> Buyer </td>
+        		<td>Buyer </td>
         		<td>Genre</td>
         		<td>Platform</td>
         		<td>Condition</td>
@@ -59,7 +59,7 @@
 					Statement stmt = con.createStatement();		
 			
 					//Check for username
-					String temp = "SELECT A.*, V.* FROM Auction A, VideoGame V WHERE A.gameID = V.gameID AND BINARY A.seller = BINARY '" + username +"'";		
+					String temp = "SELECT A.*, V.* FROM Auction A, VideoGame V WHERE A.gameID = V.gameID AND BINARY A.seller = BINARY '" + bidder +"'";		
 					ResultSet participatingAuctions = stmt.executeQuery(temp);
 				
        				while(participatingAuctions.next()){
@@ -123,7 +123,7 @@
 		e.printStackTrace();
 		%>
 		<script>
-			alert("Something went wrong displaying all auctions you participated as seller back to User Menu");
+			alert("Something went wrong displaying all auctions you participated as seller back to User Menu: LOOKING AT SOMEONE ELSES AUCTION");
 			window.location.href = "UserMenu.jsp"
 		</script>
 	<%
@@ -132,7 +132,7 @@
 	</center>
 	
 	<center>
-			<font size = "5" color = "0e5938" >Information about all your bids: <%=username %></font>
+			<font size = "5" color = "0e5938" >Information about All <%=bidder %>'s bids</font>
 			<table border="2">
    			<tr>
        			<td>AuctionID</td>
@@ -151,7 +151,7 @@
 					Statement stmt = con.createStatement();		
 			
 					//Check for username
-					String temp = "SELECT B.*, G.game_name FROM Bid B, Auction A, VideoGame G WHERE A.auctionID = B.auctionID AND G.gameID = A.gameID AND BINARY B.bidder = BINARY '" + username +"' ORDER BY B.`time_of_bid` ASC";
+					String temp = "SELECT B.*, G.game_name FROM Bid B, Auction A, VideoGame G WHERE A.auctionID = B.auctionID AND G.gameID = A.gameID AND BINARY B.bidder = BINARY '" + bidder +"' ORDER BY B.`time_of_bid` ASC";
 					ResultSet participatingBids = stmt.executeQuery(temp);
 				
        				while(participatingBids.next()){
@@ -185,14 +185,16 @@
 	}
     %>
     </center>
-	
+
 	<br>
 	<center>
 	
 		<br>
-		<form method="post" action="UserMenuAuctions.jsp">
-			<input type="submit" value="Back"/>
-		</form>
+			<form method="post" action="UserMenuBuyAuctionBackQuery.jsp">
+				<input type="hidden" name="auctionID" value="<%= auctionIDswitch %>" />
+				<input type="hidden" name="rating" value="<%= rating %>" />
+				<input id="button" type="submit" value="Back" >
+			</form>
 		
 		<br>
 		<form method="post" action="UserMenu.jsp">

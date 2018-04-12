@@ -77,6 +77,8 @@
 			<br>
 			<form method="post" action="PlaceBid.jsp">
 				<input type="hidden" name="auctionID" value="<%= auctionID %>" />
+				<input type="hidden" name="game_name" value="<%= game_name %>" />
+				<input type="hidden" name="rating" value="<%= rating %>" />
 		   		<input id="button" type="submit" value="Place Bid" >
 		   	</form>		
 			
@@ -113,12 +115,11 @@
 						<td><%=bidder %></td>
 						<td><%=time_of_bid %></td>
 						<td><%=amount%></td>
-						
+
 						<td><form method="post" action="UserMenuAuctionsBuySearchDoneViewBidder.jsp">
 								<input type="hidden" name="auctionID" value="<%= auctionID %>" />
+								<input type="hidden" name="rating" value="<%= rating %>" />
 								<input type="hidden" name="bidder" value="<%= bidder %>" />
-								<input type="hidden" name="time_of_bid" value="<%= time_of_bid %>" />
-								<input type="hidden" name="amount" value="<%= amount %>" />
 					   		<input id="button" type="submit" value="View" >
 					   	</form>		
 					   	</td>	
@@ -136,8 +137,8 @@
 						
 						<td><form method="post" action="UserMenuAuctionsBuySearchDoneViewBidder.jsp">
 								<input type="hidden" name="auctionID" value="<%= auctionID %>" />
-								<input type="hidden" name="time_of_bid" value="<%= time_of_bid %>" />
-								<input type="hidden" name="amount" value="<%= amount %>" />
+								<input type="hidden" name="rating" value="<%= rating %>" />
+								<input type="hidden" name="bidder" value="<%= bidder %>" />
 					   		<input id="button" type="submit" value="View" >
 					   	</form>		
 					   	</td>	

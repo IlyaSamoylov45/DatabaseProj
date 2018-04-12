@@ -80,13 +80,21 @@ UserMenuAuctionsSellMature.jsp                              Ilya Samoylov
 UserMenuAuctionsSellMatureQuery.jsp                         Ilya Samoylov
 UserMenuAuctionsSellTeen.jsp								Ilya Samoylov
 UserMenuAuctionsSellTeenQuery.jsp							Ilya Samoylov
+
 UserMenuAuctionsCurrentlySelling.jsp						Ilya Samoylov
 UserMenuAuctionsCurrentlySellingMore.jsp					Ilya Samoylov
+
 UserMenuAuctionsHistory.jsp									Ilya Samoylov
+
 UserMenuAuctionsBuy.jsp										Ilya Samoylov
 UserMenuAuctionsBuySearch.jsp								Ilya Samoylov
 UserMenuAuctionsBuySearchDone.jsp							Ilya Samoylov
 UserMenuAuctionsBuySearchDoneView.jsp						Ilya Samoylov
+UserMenuAuctionsBuySearchDoneViewBidder.jsp                 Ilya Samoylov
+UserMenuBuyAuctionBackQuery.jsp								Ilya Samoylov
+
+PlaceBid.jsp												Ilya Samoylov
+
 
 UserMenuEmail.jsp											Ilya Samoylov
 UserMenuEmailInbox.jsp										Ilya Samoylov

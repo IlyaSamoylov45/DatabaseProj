@@ -103,8 +103,6 @@
 								<input type="hidden" name="information" value="<%= information %>" />
 								<input type="hidden" name="game_name" value="<%= game_name %>" />
 								
-								
-								
 				   				<input id="button" type="submit" value="View" >
 				   			 </form>
 				   		</td>
