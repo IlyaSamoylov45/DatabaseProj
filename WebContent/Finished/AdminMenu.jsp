@@ -38,7 +38,7 @@
 		</center>
 		<center>
 			<br>
-			<form method="post" action="LogOutAdmin.jsp">
+			<form method="post" action="LogOut.jsp">
 				<input type="submit" value="Logout">
 			</form>
 		</center>

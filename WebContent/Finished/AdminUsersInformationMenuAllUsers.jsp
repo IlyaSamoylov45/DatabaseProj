@@ -86,5 +86,11 @@
 			<input type="submit" value="Back">
 		</form>
 	</center>
+	
+	<center>
+		<form method="post" action="LogOut.jsp">
+			<input type="submit" value="Log Out">
+		</form>
+	</center>
 	</body>
 </html>

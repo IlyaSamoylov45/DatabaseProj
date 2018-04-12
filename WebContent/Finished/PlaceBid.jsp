@@ -23,6 +23,7 @@
 			String game_name  = request.getParameter("game_name");
 			String rating = request.getParameter("rating");
 			String username = (String)session.getAttribute("userName");
+			String minimum_increase = request.getParameter("minimum_increase");
 	%>
 		<br>
 		<center>
@@ -32,6 +33,7 @@
 				<br>
 				<input type="hidden" name="auctionID" value="<%= auctionIDswitch %>" />
 				<input type="hidden" name="rating" value="<%= rating %>" />
+				<input type="hidden" name="minimum_increase" value="<%= minimum_increase %>" />
 				<input type="submit" value="Create">
 				<input type="reset" value="Reset" />
 			</form>
@@ -43,6 +45,7 @@
 				<br>
 				<input type="hidden" name="auctionID" value="<%= auctionIDswitch %>" />
 				<input type="hidden" name="rating" value="<%= rating %>" />
+				<input type="hidden" name="minimum_increase" value="<%= minimum_increase %>" />
 				<input type="submit" value="Create">
 				<input type="reset" value="Reset" />
 			</form>
@@ -72,7 +75,7 @@
 		
 		<br>
 		<center>
-			<form method="post" action="LogOutEndUser.jsp">
+			<form method="post" action="LogOut.jsp">
 				<input type="submit" value="LogOut">
 			</form>
 		</center>

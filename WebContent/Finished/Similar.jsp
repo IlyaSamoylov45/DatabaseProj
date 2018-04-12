@@ -14,28 +14,33 @@
 		}
 	</style>
 
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>All Auctions</title>
-	</head>
-
 	<body>
 		<center>
-			<font size = "13" color = "0e5938" >All Auctions! </font>
+			<font size = "13" color = "0e5938" >Similar Auctions </font>
 		</center>
 
 		<br>
 		<center>
-			<font size = "5" color = "0e5938" >Click to view more information and to delete</font>
+			<font size = "5" color = "0e5938" >Click to view more information</font>
 			<table border="2">
-   			<tr>
-       			<td>AuctionID</td>
-        		<td>GameID</td>
-        		<td>Game Name</td>
-        		<td>Information</td>
-   			</tr>
+	   			<tr>
+	     	   		<td>auctionID</td>
+	      	   		<td>gameID</td>
+	      	   		<td>Game Name</td>
+	      	   		<td>Date Created</td>
+	      	   		
+	      	   		<td>Date Closing</td>
+	     	   		<td>Initial Price</td>
+	     	   		<td>Minimum Increase</td>
+	      	   		<td>Current Buyer</td>
+	      	   		<td>Seller</td>
+	
+	      	   		<td>Information</td>
+	   			</tr>
    			<%
    				try{
+   					
+   					String game_name = request.getParameter("game_name");
 	 				//Get the database connection
 					ApplicationDB db = new ApplicationDB();	
 					Connection con = db.getConnection();
@@ -44,7 +49,7 @@
 					Statement stmt = con.createStatement();		
 			
 					//Check for username
-					String temp = "SELECT A.*, V.game_name FROM Auction A, VideoGame V WHERE A.gameID = V.gameID";		
+					String temp = "SELECT A.*, V.game_name FROM Auction A, VideoGame V WHERE V.game_name = '" + game_name + "'";		
 					ResultSet All_auctions = stmt.executeQuery(temp);
 				
        				while(All_auctions.next()){
@@ -59,7 +64,7 @@
     	   				String minimum_sell = All_auctions.getString("minimum_sell");
     	   				String sell_time = All_auctions.getString("sell_time");
     	   				String information = All_auctions.getString("information");
-    	   				String game_name = All_auctions.getString("game_name");
+    	   				String game_nameCheck = All_auctions.getString("game_name");
     	   				
     	   				
     	   				if(buyer == null){
@@ -76,32 +81,18 @@
     	   				
    			%>
            			 <tr>
-            			<td><%=auctionID%></td>
-						<td><%=gameID %></td>
-						<td><%=game_name %></td>
-						<td><textarea name="content" rows="5" cols="20" readonly><%=information %></textarea></td>		
-						<td>
-							<form method="post" action="CustRepDeleteMenuAuctionsView.jsp">
-								<input type="hidden" name="auctionID" value="<%= auctionID %>" />
-								<input type="hidden" name="gameID" value="<%= gameID %>" />
-								<input type="hidden" name="dateCreated" value="<%= dateCreated %>" />
-								<input type="hidden" name="dateClosing" value="<%= dateClosing %>" />
-								
-								<input type="hidden" name="initial_price" value="<%= initial_price %>" />
-								<input type="hidden" name="minimum_increase" value="<%= minimum_increase %>" />
-								<input type="hidden" name="buyer" value="<%= buyer %>" />
-								<input type="hidden" name="seller" value="<%= seller %>" />
-								
-								<input type="hidden" name="minimum_sell" value="<%= minimum_sell %>" />
-								<input type="hidden" name="sell_time" value="<%= sell_time %>" />
-								<input type="hidden" name="information" value="<%= information %>" />
-								<input type="hidden" name="game_name" value="<%= game_name %>" />
-								
-								
-								
-				   				<input id="button" type="submit" value="View" >
-				   			 </form>
-				   		</td>
+					<td><%=auctionID%></td>
+					<td><%=gameID %></td>
+					<td><%=game_nameCheck %></td>
+					<td><%=dateCreated%></td>
+					
+					<td><%=dateClosing%></td>
+					<td><%=initial_price%></td>
+					<td><%=minimum_increase%></td>
+					<td><%=buyer%></td>
+					
+					<td><%=seller%></td>
+					<td><textarea name="content" rows="5" cols="20" readonly><%=information %></textarea></td>
 					</tr>
    			<%
       				}
@@ -116,17 +107,17 @@
 	}
     %>
 	</center>
-
+</body>
 	<br>
 	<center>
 	
 		<br>
-		<form method="post" action="CustRepDeleteMenu.jsp">
+		<form method="post" action="UserMenuAuctionsBuy.jsp">
 			<input type="submit" value="Back">
 		</form>
 		
 		<br>
-		<form method="post" action="CustRepMenu.jsp">
+		<form method="post" action="UserMenu.jsp">
 			<input type="submit" value="Main Menu">
 		</form>
 		
@@ -135,5 +126,4 @@
 			<input type="submit" value="Log Out">
 		</form>
 	</center>
-	</body>
 </html>

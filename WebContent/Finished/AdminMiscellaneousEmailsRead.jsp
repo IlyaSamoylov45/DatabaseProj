@@ -69,7 +69,7 @@
 			<form method="post" action="AdminMenu.jsp">
 				<input type="submit" value="Main Menu">
 			</form>
-			<form method="post" action="LogOutAdmin.jsp">
+			<form method="post" action="LogOut.jsp">
 				<input type="submit" value="Log Out">
 			</form>
 		</center>

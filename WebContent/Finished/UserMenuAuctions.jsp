@@ -54,7 +54,7 @@
 			</form>
 			
 			<br>
-			<form method="post" action="LogOutEndUser.jsp">
+			<form method="post" action="LogOut.jsp">
 				<input type="submit" value="Logout">
 			</form>
 		</center>

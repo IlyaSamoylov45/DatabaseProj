@@ -67,6 +67,6 @@
 		}
 		%>
 		<br>
-		<a href=EndUserMenu.jsp>Back to the main menu of Customer Representative</a>
+		<a href=UserMenu.jsp>Back to the main menu of User</a>
 	</body>
 </html>

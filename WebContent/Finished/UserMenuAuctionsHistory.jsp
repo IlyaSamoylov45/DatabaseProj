@@ -40,6 +40,7 @@
         		<td>Date Closing</td>
         		<td>Initial Price</td>
         		<td>Minimum Increase</td>
+        		<td>Minimum Sell Price</td>
         		<td>Sell Time</td>
         		<td> Buyer </td>
         		<td>Genre</td>
@@ -200,7 +201,7 @@
 		</form>
 		
 		<br>
-		<form method="post" action="LogOutEndUser.jsp">
+		<form method="post" action="LogOut.jsp">
 			<input type="submit" value="Log Out"/>
 		</form>
 	</center>

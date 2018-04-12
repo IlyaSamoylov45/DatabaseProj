@@ -82,7 +82,7 @@
 			<form method="post" action="UserMenu.jsp">
 				<input type="submit" value="Main Menu">
 			</form>
-			<form method="post" action="LogOutEndUser.jsp">
+			<form method="post" action="LogOut.jsp">
 				<input type="submit" value="Log Out">
 			</form>
 		</center>

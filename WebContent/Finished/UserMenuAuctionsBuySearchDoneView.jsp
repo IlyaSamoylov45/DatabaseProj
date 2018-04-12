@@ -78,10 +78,16 @@
 			<form method="post" action="PlaceBid.jsp">
 				<input type="hidden" name="auctionID" value="<%= auctionID %>" />
 				<input type="hidden" name="game_name" value="<%= game_name %>" />
+				<input type="hidden" name="minimum_increase" value="<%= minimum_increase %>" />
 				<input type="hidden" name="rating" value="<%= rating %>" />
 		   		<input id="button" type="submit" value="Place Bid" >
 		   	</form>		
-			
+		   	
+		   	<br>
+			<form method="post" action="Similar.jsp">
+				<input type="hidden" name="game_name" value="<%= game_name %>" />
+		   		<input id="button" type="submit" value="Similar" >
+		   	</form>	
 			<center>
 				<font size = "13" color = "0e5938" >Bidding History</font>
 			</center>
@@ -184,7 +190,7 @@
 			</form>
 			
 			<br>
-			<form method="post" action="LogOutEndUser.jsp">
+			<form method="post" action="LogOut.jsp">
 				<input type="submit" value="Log Out">
 			</form>
 		</center>

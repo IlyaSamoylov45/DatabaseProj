@@ -145,7 +145,7 @@
 				<%
 			} catch (Exception ex) {
 				out.print(ex);
-				out.print("Error. Something went wrong go back to creating a Curomer Rep");
+				out.print("Error. Something went wrong go back to creating a Customer Rep");
 			}
 			%>
 			<br>

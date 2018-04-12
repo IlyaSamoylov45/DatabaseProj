@@ -76,7 +76,7 @@
 			<form method="post" action="CustRepMenu.jsp">
 				<input type="submit" value="Main Menu">
 			</form>
-			<form method="post" action="LogOutCustRep.jsp">
+			<form method="post" action="LogOut.jsp">
 				<input type="submit" value="Logout">
 			</form>
 		</center>>
