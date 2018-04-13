@@ -1,0 +1,23 @@
+DELIMITER $$
+CREATE TRIGGER `check_self_email` AFTER INSERT 
+	ON `Email`
+	FOR EACH ROW BEGIN
+		DELETE FROM `Email` WHERE NEW.`to` = NEW.`from`;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER `seller_buying` AFTER INSERT 
+	ON `Bid`
+	FOR EACH ROW BEGIN
+		DELETE FROM `Bid` WHERE NEW.`auctionID` = `Auction`.`auctionID` AND `Auction`.`seller` = NEW.`bidder`;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER `seller_selfautobidding` AFTER INSERT 
+	ON `AutoBid`
+	FOR EACH ROW BEGIN
+		DELETE FROM `AutoBid` WHERE NEW.`auctionID` = `Auction`.`auctionID` AND `Auction`.`seller` = NEW.`bidder`;
+END$$
+DELIMITER ;

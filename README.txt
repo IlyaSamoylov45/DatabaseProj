@@ -1,8 +1,23 @@
+
+Note: make sure these aren't public!
+URL for the project: <NEEDS TO BE INSERTED>
+Tomcat:				 <NEEDS TO BE INSERTED>
+		User:		 <NEEDS TO BE INSERTED>
+		Password:	 <NEEDS TO BE INSERTED>
+
+Private key .pem file name: <NEEDS TO BE INSERTED>
+
+
+
+
+
+
+
 Credit:
 									Database
 _______________________________________________________________________________________
 Database Design and Coding other Than Triggers:				Ilya Samoylov
-Triggers:
+Triggers:													Mohammad Mahdi Emad
 
 									 Admin
 _______________________________________________________________________________________
