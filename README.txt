@@ -60,9 +60,7 @@ CustRepUserInfoChangeQuery.jsp								Ilya Samoylov
 _______________________________________________________________________________________
 Login.jsp													Ilya Samoylov
 LoginQuery.jsp												Ilya Samoylov
-LogOutAdmin.jsp												Ilya Samoylov
-LogOutCustRep.jsp											Ilya Samoylov
-LogOutEndUser.jsp											Ilya Samoylov
+LogOut.jsp													Ilya Samoylov
 
 newCustRep.jsp												Ilya Samoylov
 newCustRepQuery.jsp											Ilya Samoylov
@@ -97,6 +95,7 @@ PlaceBid.jsp												Ilya Samoylov
 PlaceBidQuery.jsp											Ilya Samoylov
 PlaceAutoBidQuery.jsp										Ilya Samoylov
 Similar.jsp													Ilya Samoylov
+
 UserMenuAuctionsQuestions.jsp								Ilya Samoylov
 UserMenuAuctionsQuestionsQuery.jsp.jsp						Ilya Samoylov
 

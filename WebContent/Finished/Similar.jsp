@@ -41,6 +41,8 @@
    				try{
    					
    					String game_name = request.getParameter("game_name");
+   					
+   					out.print(game_name);
 	 				//Get the database connection
 					ApplicationDB db = new ApplicationDB();	
 					Connection con = db.getConnection();
@@ -53,6 +55,7 @@
 					ResultSet All_auctions = stmt.executeQuery(temp);
 				
        				while(All_auctions.next()){
+       					out.print("nothing found");
     	  				String auctionID = All_auctions.getString("auctionID");
     	  				String gameID = All_auctions.getString("gameID");
     	  				String dateCreated = All_auctions.getString("dateCreated");

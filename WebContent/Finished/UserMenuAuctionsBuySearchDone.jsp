@@ -25,11 +25,12 @@
 	</center>
 
 	<br>
-	<%
+	<%		
+	String game_name = request.getParameter("gameName");
+
 	try{
 		
 		String rating = request.getParameter("rating");
-		String game_name = request.getParameter("gameName");
 		String genre = request.getParameter("genre");
 		String platform = request.getParameter("platform");
 		String condition = request.getParameter("condition");		
@@ -182,17 +183,23 @@
 						<%}%>
 						</table>
 				   		</center>
-				   		<%
-				   		
+					   	<%
 				}
 				else{
 					
 					%>
 					<center>
 						<font size = "3" color = red >
-							No item like that Found!! Please note that searches are case sensitive!
+							No item like that Found!! Please note that searches are case sensitive Try to find similar?
 						</font>
 					</center>
+					<center>
+					   		<br>
+							<form method="post" action="Similar.jsp">
+								<input type="hidden" name="game_name" value="<%= game_name %>" />
+						   		<input id="button" type="submit" value="Similar" >
+						   	</form>	
+					   	</center>
 			   		<%	
 				}
 		gameSearch.close();
@@ -208,8 +215,7 @@
 			<%
 		}
 		%>
-
-		<center>
+			<center>
 		<br>
 			<form method="post" action="UserMenuAuctionsBuy.jsp">
 				<input type="submit" value="Back">
