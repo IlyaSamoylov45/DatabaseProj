@@ -13,3 +13,11 @@ CREATE TRIGGER `seller_buying` AFTER INSERT
 		DELETE FROM `Bid` WHERE NEW.`auctionID` = `Auction`.`auctionID` AND `Auction`.`seller` = NEW.`bidder`;
 END$$
 DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER `seller_selfautobidding` AFTER INSERT 
+	ON `AutoBid`
+	FOR EACH ROW BEGIN
+		DELETE FROM `AutoBid` WHERE NEW.`auctionID` = `Auction`.`auctionID` AND `Auction`.`seller` = NEW.`bidder`;
+END$$
+DELIMITER ;
