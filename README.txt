@@ -18,7 +18,7 @@ Credit:
 _______________________________________________________________________________________
 Database Design and Coding other Than Triggers:				Ilya Samoylov
 Triggers:													Mohammad Mahdi Emad
-
+ER Diagram revision:													Mohammad Mahdi Emad
 									 Admin
 _______________________________________________________________________________________
 AdminMenu.jsp: 												Ilya Samoylov
