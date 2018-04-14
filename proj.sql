@@ -576,8 +576,6 @@ INSERT INTO `VideoGame`(`gameID`, `game_name`,`genre`, `platform`, `condition`, 
 INSERT INTO `VideoGame`(`gameID`, `game_name`,`genre`, `platform`, `condition`, `total_players`) VALUES (2, 'gameone', 'FPS', 'Xbox', 'Used', 'Co-op');
 
 
-
-
 INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (1, 1, NOW(), NOW(), 20.00, 5.00, null, 'testing', 5.00, NOW(), 'ey');
 INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (2, 1, NOW(), NOW(), 20.00, 5.00, null, 'testing', 5.00, NOW(), 'ey');
 INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (3, 1, NOW(), NOW(), 20.00, 5.00, null, 'testing', 5.00, NOW(), 'ey');
