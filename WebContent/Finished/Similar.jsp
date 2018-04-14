@@ -58,7 +58,7 @@
        					//out.print("nothing found");
     	  				String auctionID = All_auctions.getString("auctionID");
     	  				String gameID = All_auctions.getString("gameID");
-    	  				String dateCreated = All_auctions.getString("dateCreated");
+    	  				java.sql.Timestamp dateCreated = All_auctions.getTimestamp("dateCreated");
     	   				String dateClosing = All_auctions.getString("dateClosing");
     	   				String initial_price = All_auctions.getString("initial_price");
     	   				String minimum_increase = All_auctions.getString("minimum_increase");
@@ -81,6 +81,13 @@
     	   				if(sell_time == null){
     	   					sell_time = "Not sold yet.";
     	   				}
+						
+						Calendar createdCalendar = Calendar.getInstance();
+						createdCalendar.setTimeInMillis(dateCreated.getTime());
+						long createdMilli = createdCalendar.getTimeInMillis();
+						
+						long currMilli = Calendar.getInstance().getTimeInMillis();
+						if(currMilli-createdMilli<=(long)30 * 24 *60 * 60 * 1000){
     	   				
    			%>
            			 <tr>
@@ -98,7 +105,7 @@
 					<td><textarea name="content" rows="5" cols="20" readonly><%=information %></textarea></td>
 					</tr>
    			<%
-      				}
+      				}}
    			%>
    		</table>
    			<%
