@@ -21,7 +21,7 @@
                         
                         
              
-                    String sqlStr = "SELECT A.seller, A.auctionID, B.auctionID, MAX(B.amount) FROM Bid b, Auction A WHERE A.buyer <> NULL AND A.auctionID = B.auctionID GROUP BY seller ORDER BY 1 DESC";
+                    String sqlStr = "SELECT Auction.seller, Auction.auctionID FROM Auction WHERE Auction.buyer IS NOT NULL";
                     
                   // for debugging
                     System.out.println("Query statement is " + sqlStr);

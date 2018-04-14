@@ -49,7 +49,8 @@
 			
 			boolean badInput = false;
 			float total = 0;
-			String temp = "SELECT A.`auctionID`, A.`gameID`, B.`auctionID`, MAX(B.`amount`) FROM Auction A, Bid B, VideoGame V  WHERE V.`gameID` = A.`gameID` AND A.`auctionID` = B.`auctionID`";
+			String temp = "SELECT Auction.auctionID, Auction.gameID, Bid.auctionID, Bid.amount FROM Auction, Bid WHERE Auction.buyer IS NOT NULL AND '" + gameID+ "' LIKE Auction.gameID AND Auction.auctionID = Bid.auctionID HAVING MAX(Bid.amount)";
+			
 			ResultSet gameEarning = stmt.executeQuery(temp);
 			while(gameEarning.next()){
 				total += gameEarning.getFloat("amount");
@@ -84,7 +85,5 @@
 			out.print(ex);
 		}
 	%>
-	<br>
-		<a href=UserMenu.jsp>Back to user menu</a>
 	</body>
 </html>

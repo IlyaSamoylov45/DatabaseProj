@@ -30,8 +30,8 @@
                         
                     
              
-                    String sqlStr = "SELECT A.gameID, COUNT(A.gameID), A.auctionID, B.auctionID, MAX(B.amount) FROM Bid B, Auction A WHERE A.buyer <> NULL AND A.auctionID = B.auctionID GROUP BY A.gameID ORDER BY 1 DESC";
-                    
+                  //  String sqlStr = "SELECT A.gameID, COUNT(A.gameID), A.auctionID, B.auctionID, MAX(B.amount) FROM Bid B, Auction A WHERE A.buyer <> NULL AND A.auctionID = B.auctionID GROUP BY A.gameID ORDER BY 1 DESC";
+                     String sqlStr = "SELECT Auction.gameID, Auction.auctionID FROM Auction WHERE Auction.buyer IS NOT NULL";
                   // for debugging
                     System.out.println("Query statement is " + sqlStr);
                  
@@ -42,6 +42,7 @@
                     int[] sold = new int[10];
                     int x = 0;
                     ResultSet rsetcpy = stmt.executeQuery(sqlStr);
+                  
                    
                     rsetcpy.next();
                     out.println("Point 1");

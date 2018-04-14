@@ -30,7 +30,7 @@
              		//Create a SQL statement
              		Statement stmt = con.createStatement();		 
               		out.println("Point 1");
-                     String sqlStrE = "SELECT V.gameID, A.auctionID, B.auctionID, MAX(B.amount), A.gameID* FROM Bid b, Auction A, VideoGame V WHERE A.buyer <> NULLAND  V.gameID = A.gameID AND A.auctionID = B.auctionID GROUP BY auctionID";
+                     String sqlStrE = "SELECT Auction.auctionID, Bid.amount FROM Auction, Bid WHERE Bid.auctionID = Auction.auctionID HAVING MAX(Bid.amount)";
                     
                    // for debugging
                      System.out.println("Query statement is " + sqlStrE);

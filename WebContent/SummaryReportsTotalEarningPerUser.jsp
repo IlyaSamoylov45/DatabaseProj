@@ -48,7 +48,7 @@
 			
 			boolean badInput = false;
 			float total = 0;
-			String temp = "SELECT A.auctionID, A.seller, B.auctionID, MAX(B.amount) FROM Auction A, Bid B WHERE input_user = A.seller AND A.auctionID = B.auctionID";
+			String temp = "SELECT Auction.auctionID, Auction.seller, Bid.auctionID, Bid.amount FROM Auction, Bid WHERE Auction.buyer IS NOT NULL AND '" + userID + "' LIKE Auction.seller AND Auction.auctionID = Bid.auctionID HAVING MAX(Bid.amount)";
 			ResultSet userEarning = stmt.executeQuery(temp);
 			while(userEarning.next()){
 				total += userEarning.getFloat("amount");
@@ -57,7 +57,7 @@
 			%>
 			
 			 <tr>
-            			<td><%=username%></td>
+            			<td><%=userID%></td>
 						<td><%=total %></td>
 					</tr>
 			</table>
@@ -84,7 +84,5 @@
 			out.print(ex);
 		}
 	%>
-	<br>
-		<a href=UserMenu.jsp>Back to user menu</a>
 	</body>
 </html>

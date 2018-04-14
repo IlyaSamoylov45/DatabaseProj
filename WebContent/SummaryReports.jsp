@@ -1,5 +1,4 @@
 <%--Author: Mahim Gupta --%>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="com.cs336.pkg.*"%>
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
@@ -33,10 +32,10 @@
 		<br>
 		<center>
 			<font size = "5" color = "0e5938" >Earning per Game Rating</font>
-			 
- <%@ page import = "java.sql.*" %>
- 
-  
+			 <form method="post" action="SummaryReportsTotalEarningPerItemType.jsp">
+ 			<input type="submit" value="View">
+ 			
+ 		 </form>
  
 		</center>
 		
@@ -52,7 +51,7 @@
 		<br>
 		<center>
 			<font size = "5" color = "0e5938" >Total Earnings</font>
-			
+			<form method="post" action="SummaryReportsTotalEarnings.jsp">
                
 				<input type="submit" value="View">
 			</form>
@@ -72,7 +71,6 @@
 		<center>
 			<font size = "5" color = "0e5938" >Best Selling User</font>
 			<form method="post" action="SummaryReportsBestSellingUsers.jsp">
-			<%@ page import = "java.sql.*" %>
              
 				<input type="submit" value="View">
 			</form>

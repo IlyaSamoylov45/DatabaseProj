@@ -36,7 +36,7 @@ AdminUsersInformationMenuAllUsers.jsp						Ilya Samoylov
 AdminUsersInformationMenuNewUser.jsp						Ilya Samoylov
 AdminUsersInformationMenuNewUserQuery.jsp					Ilya Samoylov
 
-SummaryReports.jsp											Mahim Gupta
+SummaryReports.jsp											Ilya Samoylov, Mahim Gupta
 SummaryReportsBestSellingItems.jsp							Mahim Gupta
 SummaryReportsBestSellingUsers.jsp							Mahim Gupta
 SummaryReportsTotalEarningPerItem.jsp						Mahim Gupta
