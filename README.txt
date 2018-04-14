@@ -36,8 +36,13 @@ AdminUsersInformationMenuAllUsers.jsp						Ilya Samoylov
 AdminUsersInformationMenuNewUser.jsp						Ilya Samoylov
 AdminUsersInformationMenuNewUserQuery.jsp					Ilya Samoylov
 
-SummaryReports.jsp											Ilya Samoylov
-
+SummaryReports.jsp											Mahim Gupta
+SummaryReportsBestSellingItems.jsp							Mahim Gupta
+SummaryReportsBestSellingUsers.jsp							Mahim Gupta
+SummaryReportsTotalEarningPerItem.jsp						Mahim Gupta
+SummaryReportsTotalEarningPerItemType.jsp					Mahim Gupta
+SummaryReportsTotalEarningPerUser.jsp						Mahim Gupta
+SummaryReportsTotalEarnings.jsp								Mahim Gupta
 
 							 Customer Representative
 _______________________________________________________________________________________
