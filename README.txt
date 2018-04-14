@@ -19,7 +19,7 @@ ________________________________________________________________________________
 Database Design 
 Database Code:												Ilya Samoylov, Mohammad Mahdi Emad, Mahim Gupta
 Triggers:													Mohammad Mahdi Emad
-
+ER Diagram revision:													Mohammad Mahdi Emad
 									 Admin
 _______________________________________________________________________________________
 AdminMenu.jsp: 												Ilya Samoylov
