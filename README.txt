@@ -16,10 +16,10 @@ Private key .pem file name: <NEEDS TO BE INSERTED>
 Credit:
 									Database
 _______________________________________________________________________________________
-Database Design 
-Database Code:												Ilya Samoylov, Mohammad Mahdi Emad, Mahim Gupta
+Database Design:											Ilya Samoylov, Mohammad Mahdi Emad, Mahim Gupta
+Database Code:												Ilya Samoylov
 Triggers:													Mohammad Mahdi Emad
-ER Diagram revision:													Mohammad Mahdi Emad
+ER Diagram revision:										Mohammad Mahdi Emad
 									 Admin
 _______________________________________________________________________________________
 AdminMenu.jsp: 												Ilya Samoylov
