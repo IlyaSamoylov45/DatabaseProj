@@ -47,12 +47,16 @@
 					<%
 				}
 				else{
+					java.util.Date startDate = new java.util.Date();
+				    java.sql.Timestamp sqlDate = new java.sql.Timestamp(startDate.getTime());
 					int gameID = exists.getInt("gameID");
-					String temp2 = "INSERT INTO `Alert`(`username`, `auctionID`, `gameID`) VALUES (?,?,?) ";
+					String temp2 = "INSERT INTO `Alert`(`username`, `auctionID`, `gameID`, `alertTime`) VALUES (?,?,?,?) ";
+					
 					PreparedStatement insert_alert = con.prepareStatement(temp2);
 					insert_alert.setString(1, username);
 					insert_alert.setString(2, "null");
 					insert_alert.setInt(3, gameID);
+					insert_alert.setTimestamp(4, sqlDate);
 					insert_alert.executeUpdate();
 					insert_alert.close();
 				}
@@ -61,12 +65,14 @@
 				
 			}
 			if(!badInput){
+				java.util.Date startDate = new java.util.Date();
+			    java.sql.Timestamp sqlDate = new java.sql.Timestamp(startDate.getTime());
 				String temp1 = "SELECT * FROM VideoGame V WHERE BINARY game_name = BINARY'" + game_name + "'";
 				ResultSet exists = stmt.executeQuery(temp1); 
 				exists.next();
 				int gameID = exists.getInt("gameID");
 				//Check for item in database
-				String temp2 = "INSERT INTO `Alert`(`username`, `auctionID`, `gameID`)" + " VALUES(?, ?, ?)";
+				String temp2 = "INSERT INTO `Alert`(`username`, `auctionID`, `gameID`, `alertTime`) VALUES(?,?,?,?)";
 				
 				//out.print("username: "+username + " ");
 				//out.print("auctionID: "+auctionID+ " ");
@@ -76,6 +82,7 @@
 				insert_alert.setString(1, username);
 				insert_alert.setString(2, auctionID);
 				insert_alert.setInt(3, gameID);
+				insert_alert.setTimestamp(4, sqlDate);
 				insert_alert.executeUpdate();
 				insert_alert.close();
 
