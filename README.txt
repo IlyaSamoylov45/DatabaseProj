@@ -115,7 +115,7 @@ UserMenuBuyAuctionBackQuery.jsp								Ilya Samoylov
 PlaceBid.jsp												Ilya Samoylov
 PlaceBidQuery.jsp											Ilya Samoylov
 PlaceAutoBidQuery.jsp										Ilya Samoylov, Mohammad Mahdi Emad
-Similar.jsp													Ilya Samoylov
+Similar.jsp													Ilya Samoylov, Mohammad Mahdi Emad
 
 UserMenuAuctionsQuestions.jsp								Ilya Samoylov
 UserMenuAuctionsQuestionsQuery.jsp.jsp						Ilya Samoylov
