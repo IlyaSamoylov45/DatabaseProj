@@ -186,7 +186,7 @@
 					   	<%
 				}
 				else{
-					
+					String auctionID = "";
 					%>
 					<center>
 						<font size = "3" color = red >
@@ -197,9 +197,25 @@
 					   		<br>
 							<form method="post" action="Similar.jsp">
 								<input type="hidden" name="game_name" value="<%= game_name %>" />
+								
 						   		<input id="button" type="submit" value="Similar" >
 						   	</form>	
+					</center>
+					
+					<center>
+						<font size = "3" color = red >
+							No item like that Found!! Set Alert to see when this item comes up??
+						</font>
+					</center>
+					<center>
+					   		<br>
+							<form method="post" action="Alert.jsp">
+								<input type="hidden" name="game_name" value="<%= game_name %>" />
+								<input type="hidden" name="auctionID" value="<%= auctionID %>" />
+						   		<input id="button" type="submit" value="Alert" >
+						   	</form>	
 					   	</center>
+					
 			   		<%	
 				}
 		gameSearch.close();

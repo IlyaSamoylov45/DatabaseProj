@@ -43,7 +43,14 @@
 				<input type="submit" value="View">
 			</form>
 		</center>
-
+		
+		<center>
+			<font size = "5" color = "0e5938" >View Alerts!</font>
+			<form method="post" action="UserMenuAlerts.jsp">
+				<input type="submit" value="View">
+			</form>
+		</center>
+		
 		<center>
 			<font size = "5" color = "0e5938" >Auctions!</font>
 			<form method="post" action="UserMenuAuctions.jsp">

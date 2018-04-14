@@ -28,8 +28,6 @@
 		    endDate = endTime_cal.getTime();
 		    java.sql.Timestamp sqlDateEnd = new java.sql.Timestamp(endDate.getTime());
 		    
-		    out.print("startTime: " + sqlDate);
-		    out.print("endTime: " + sqlDateEnd);
 		    
 			String game_name = request.getParameter("gameName");
 			String genre = request.getParameter("genre");

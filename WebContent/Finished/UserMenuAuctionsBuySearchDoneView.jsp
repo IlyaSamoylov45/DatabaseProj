@@ -89,6 +89,15 @@
 		   		<input id="button" type="submit" value="Similar" >
 		   	</form>	
 		   	<br>
+		   	
+			<br>
+			<form method="post" action="Alert.jsp">
+				<input type="hidden" name="game_name" value="<%= game_name %>" />
+				<input type="hidden" name="auctionID" value="<%= auctionID %>" />
+				<input id="button" type="submit" value="Alert" >
+			</form>	
+			
+		   	<br>
 			<form method="post" action="UserMenuAuctionsQuestions.jsp">
 				<input type="hidden" name="auctionIDswitch" value="<%= auctionID %>" />
 				<input type="hidden" name="rating" value="<%= rating %>" />

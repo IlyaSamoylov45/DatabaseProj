@@ -16,7 +16,8 @@ Private key .pem file name: <NEEDS TO BE INSERTED>
 Credit:
 									Database
 _______________________________________________________________________________________
-Database Design and Coding other Than Triggers:				Ilya Samoylov
+Database Design 
+Database Code:												Ilya Samoylov, Mohammad Mahdi Emad, Mahim Gupta
 Triggers:													Mohammad Mahdi Emad
 
 									 Admin
@@ -108,7 +109,7 @@ UserMenuBuyAuctionBackQuery.jsp								Ilya Samoylov
 
 PlaceBid.jsp												Ilya Samoylov
 PlaceBidQuery.jsp											Ilya Samoylov
-PlaceAutoBidQuery.jsp										Ilya Samoylov
+PlaceAutoBidQuery.jsp										Ilya Samoylov, Mohammad Mahdi Emad
 Similar.jsp													Ilya Samoylov
 
 UserMenuAuctionsQuestions.jsp								Ilya Samoylov
@@ -129,3 +130,5 @@ UserMenuInfoDelete.jsp										Ilya Samoylov
 
 UserMenuQuestions.jsp										Ilya Samoylov
 UserMenuQuestionsView.jsp									Ilya Samoylov
+UserMenuAlerts.jsp											Ilya Samoylov
+Alerts.jsp													Ilya Samoylov

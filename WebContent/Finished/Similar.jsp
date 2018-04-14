@@ -55,7 +55,7 @@
 					ResultSet All_auctions = stmt.executeQuery(temp);
 				
        				while(All_auctions.next()){
-       					out.print("nothing found");
+       					//out.print("nothing found");
     	  				String auctionID = All_auctions.getString("auctionID");
     	  				String gameID = All_auctions.getString("gameID");
     	  				String dateCreated = All_auctions.getString("dateCreated");
