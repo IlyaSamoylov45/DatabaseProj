@@ -87,6 +87,7 @@
 		</form>
 	</center>
 	
+	<br>
 	<center>
 		<form method="post" action="LogOut.jsp">
 			<input type="submit" value="Log Out">
