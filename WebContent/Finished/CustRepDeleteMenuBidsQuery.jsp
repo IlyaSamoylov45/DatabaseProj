@@ -19,7 +19,9 @@
 				String auctionID = request.getParameter("auctionID");
 				String bidder = request.getParameter("bidder");
 				String amount = request.getParameter("amount");
-
+				System.out.println(auctionID);
+				System.out.println(bidder);
+				System.out.println(amount);
 			//Get the database connection
 			ApplicationDB db = new ApplicationDB();	
 			Connection con = db.getConnection();
@@ -28,7 +30,7 @@
 			Statement stmt = con.createStatement();		
 		
 			//Check for username
-			String temp = "DELETE FROM `Bid` WHERE BINARY `bidder` = BINARY ? AND `auctionID` = ? AND `amount` = ?";		
+			String temp = "DELETE FROM `Bid` WHERE `bidder` = ? AND `auctionID` = ? AND `amount` = ?";		
 			
 			PreparedStatement ps = con.prepareStatement(temp);
 			ps.setString(1, bidder);
@@ -37,6 +39,30 @@
 			
 			ps.executeUpdate();
 			ps.close();
+			
+			String checknext = "Select B.bidder, B.auctionID ,MAX(B.amount) FROM Bid B WHERE BINARY auctionID = '" + auctionID + "'";
+			
+			ResultSet test = stmt.executeQuery(checknext);
+			String insert_auction = "";
+			if(test.next()){
+				out.print("hello");
+				
+				String newBidder = test.getString("bidder");
+				
+				insert_auction = "UPDATE `Auction` SET `buyer` = '" + newBidder + "' WHERE auctionID = '" + auctionID + "'";
+				int insert_auction_update = stmt.executeUpdate(insert_auction);
+				%>
+				<script>
+					alert("  No other bid higher");
+					window.location.href = "CustRepDeleteMenuBids.jsp"
+				</script><%
+			}else{
+				String newBidder = test.getString("bidder");
+				insert_auction = "UPDATE `Auction` SET `buyer` = '" + newBidder + "' WHERE auctionID = '" + auctionID + "'";
+				int insert_auction_update = stmt.executeUpdate(insert_auction);
+				
+			}
+			
 			stmt.close();
 			con.close();
 				%>

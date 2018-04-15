@@ -107,7 +107,68 @@
 						<font size = "5" color = "red" >No Alerts found for items you want!</font>
 					</center>
 				<%
-			}
+			}%>
+			<font size = "5" color = "0e5938" >Passed your upper limit!</font>
+			<%
+			String temp2 = "SELECT A.*, G.game_name FROM Auction A, VideoGame G, Bid B WHERE A.`gameID` = G.`gameID` AND BINARY A.seller = BINARY '" + username + "' AND B.auctionID = A.auctionID AND B.amount > A.minimum_sell";		
+			
+			ResultSet alertUpper = stmt.executeQuery(temp2);
+			
+			if(alertUpper.next()){	
+				%>
+				<table border="2">
+		   			<tr>
+		     	   		<td>Game Name</td>
+		      	   		<td>AuctionID</td>
+		      	    </tr>
+		   			<tr>
+		   		<%
+		   			String auctionID = alertUpper.getString("auctionID");
+					String gameID = alertUpper.getString("gameID");
+					String dateCreated = alertUpper.getString("dateCreated");
+					String dateClosing = alertUpper.getString("dateClosing");
+					String initial_price = alertUpper.getString("initial_price");
+					String minimum_increase = alertUpper.getString("minimum_increase");
+					String buyer = alertUpper.getString("buyer");
+					String seller = alertUpper.getString("seller");
+					String minimum_sell = alertUpper.getString("minimum_sell");
+					String sell_time = alertUpper.getString("sell_time");
+					String information = alertUpper.getString("information");	
+					String game_name = alertUpper.getString("game_name");
+		   		%>
+						<td><%=game_name%></td>
+						<td><%=auctionID%></td>						
+					</tr>
+					<%
+					while(alertUpper.next()){
+						 auctionID = alertUpper.getString("auctionID");
+						 gameID = alertUpper.getString("gameID");
+						 dateCreated = alertUpper.getString("dateCreated");
+						 dateClosing = alertUpper.getString("dateClosing");
+						 initial_price = alertUpper.getString("initial_price");
+						 minimum_increase = alertUpper.getString("minimum_increase");
+						 buyer = alertUpper.getString("buyer");
+						 seller = alertUpper.getString("seller");
+						 minimum_sell = alertUpper.getString("minimum_sell");
+						 sell_time = alertUpper.getString("sell_time");
+						 information = alertUpper.getString("information");	
+						 game_name = alertUpper.getString("game_name");
+		   		%><tr>
+						<td><%=game_name%></td>
+						<td><%=auctionID%></td>
+					</tr>
+					<%
+					}
+					%>
+				</table>
+				<%
+				}
+			alertSearch.close();
+			alertUpper.close();
+			stmt.close();
+			con.close();
+			
+			
 		}catch (Exception ex) {
 			out.print("Error. Something went wrong checking this auction and bids");
 			out.print(ex);
