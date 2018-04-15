@@ -33,7 +33,6 @@
 		    String auctionID = request.getParameter("auctionID");
 			String username = (String)session.getAttribute("userName");
 			
-			
 			boolean badInput = false;
 			if(auctionID.equals("")){
 				String temp1 = "SELECT * FROM VideoGame V WHERE BINARY game_name = BINARY'" + game_name + "'";
@@ -51,50 +50,69 @@
 				    java.sql.Timestamp sqlDate = new java.sql.Timestamp(startDate.getTime());
 					int gameID = exists.getInt("gameID");
 					String temp2 = "INSERT INTO `Alert`(`username`, `auctionID`, `gameID`, `alertTime`) VALUES (?,?,?,?) ";
-					
-					PreparedStatement insert_alert = con.prepareStatement(temp2);
-					insert_alert.setString(1, username);
-					insert_alert.setString(2, "null");
-					insert_alert.setInt(3, gameID);
-					insert_alert.setTimestamp(4, sqlDate);
-					insert_alert.executeUpdate();
-					insert_alert.close();
+					String temp3 = "SELECT * FROM VideoGame V WHERE BINARY username = BINARY'" + username + "' AND gameID = '" + gameID + "'";
+					ResultSet alreadyIn = stmt.executeQuery(temp3); 
+					if(!alreadyIn.next()){
+						PreparedStatement insert_alert = con.prepareStatement(temp2);
+						insert_alert.setString(1, username);
+						insert_alert.setString(2, "null");
+						insert_alert.setInt(3, gameID);
+						insert_alert.setTimestamp(4, sqlDate);
+						insert_alert.executeUpdate();
+						insert_alert.close();
+						%>	
+						<script>
+							alert("Alert successfully placed, returning to Auctions menu");
+							window.location.href = "UserMenuAuctionsBuy.jsp"
+						</script>
+						<%
+					}
+					else{%>
+						<script>
+							alert("Alert successfully placed, returning to Auctions menu");
+							window.location.href = "UserMenuAuctionsBuy.jsp"
+						</script>
+					<%}
+					alreadyIn.close();
 				}
 				badInput = true;
 				exists.close();
-				
 			}
+			String temp1 = "SELECT * FROM VideoGame V WHERE BINARY game_name = BINARY'" + game_name + "'";
 			if(!badInput){
 				java.util.Date startDate = new java.util.Date();
 			    java.sql.Timestamp sqlDate = new java.sql.Timestamp(startDate.getTime());
-				String temp1 = "SELECT * FROM VideoGame V WHERE BINARY game_name = BINARY'" + game_name + "'";
+				 temp1 = "SELECT * FROM VideoGame V WHERE BINARY game_name = BINARY'" + game_name + "'";
 				ResultSet exists = stmt.executeQuery(temp1); 
 				exists.next();
 				int gameID = exists.getInt("gameID");
 				//Check for item in database
 				String temp2 = "INSERT INTO `Alert`(`username`, `auctionID`, `gameID`, `alertTime`) VALUES(?,?,?,?)";
-				
-				//out.print("username: "+username + " ");
-				//out.print("auctionID: "+auctionID+ " ");
-				//out.print("gameID: " +gameID+ " ");
-
-				PreparedStatement insert_alert = con.prepareStatement(temp2);
-				insert_alert.setString(1, username);
-				insert_alert.setString(2, auctionID);
-				insert_alert.setInt(3, gameID);
-				insert_alert.setTimestamp(4, sqlDate);
-				insert_alert.executeUpdate();
-				insert_alert.close();
-
-				%>		
-
+				String temp3 = "SELECT * FROM Alert A WHERE BINARY A.`username` = BINARY '" + username + "' AND A.`gameID` = '" + gameID + "'";
+				ResultSet alreadyIn = stmt.executeQuery(temp3); 
+				if(!alreadyIn.next()){
+					PreparedStatement insert_alert = con.prepareStatement(temp2);
+					insert_alert.setString(1, username);
+					insert_alert.setString(2, auctionID);
+					insert_alert.setInt(3, gameID);
+					insert_alert.setTimestamp(4, sqlDate);
+					insert_alert.executeUpdate();
+					insert_alert.close();
+					%>		
+						<script>
+							alert("Alert successfully placed, returning to Auctions menu");
+							window.location.href = "UserMenuAuctionsBuy.jsp"
+						</script>
+					<%
+				}
+				else{%>
 				<script>
-					alert("Alert successfully placed, returning to Auctions menu");
+					alert("Alert already exists");
 					window.location.href = "UserMenuAuctionsBuy.jsp"
 				</script>
-				
-				<%
-				exists.close();
+				<%}
+				alreadyIn.close();
+				        
 			}
 			stmt.close();
 			con.close();

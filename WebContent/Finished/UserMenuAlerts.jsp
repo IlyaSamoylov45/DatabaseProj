@@ -35,7 +35,7 @@
 			//Create a SQL statement
 			Statement stmt = con.createStatement();		
 
-			String temp1 = "SELECT B.*, G.game_name FROM Alert A, Auction B, VideoGame G WHERE A.`gameID` = B.`gameID` AND A.`auctionID` <> B.`auctionID`AND A.`alertTime` < B.`dateCreated` AND B.gameID = G.gameID AND BINARY A.username = BINARY '" + username + "' ";		
+			String temp1 = "SELECT B.*, G.game_name FROM Alert A, Auction B, VideoGame G WHERE A.`gameID` = B.`gameID` AND A.`auctionID` < B.`auctionID`AND A.`alertTime` <= B.`dateCreated` AND A.gameID = G.gameID AND BINARY A.username = BINARY '" + username + "' ";		
 			
 			ResultSet alertSearch = stmt.executeQuery(temp1);
 			
@@ -89,9 +89,9 @@
 	   		%><tr>
 					<td><%=game_name%></td>
 					<td><%=auctionID%></td>	
-					<td><form method="post" action="DeleteAlert.jsp">
+					<td><form method="post" action="AlertDelete.jsp">
 							<input type="hidden" name="username" value="<%= username %>" />
-							<input type="hidden" name="gameID" value="<%= gameID %>" />
+							<input type="hidden" name="" value="<%= gameID %>" />
 					   		<input id="button" type="submit" value="Delete" >
 					   	</form>		
 					</td>	

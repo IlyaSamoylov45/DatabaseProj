@@ -18,7 +18,7 @@ Credit:
 _______________________________________________________________________________________
 Database Design:											Ilya Samoylov, Mohammad Mahdi Emad, Mahim Gupta
 Database Code:												Ilya Samoylov
-Triggers:													Mohammad Mahdi Emad
+Triggers													Mohammad Mahdi Emad
 ER Diagram revision:										Mohammad Mahdi Emad
 									 Admin
 _______________________________________________________________________________________
@@ -135,5 +135,10 @@ UserMenuInfoDelete.jsp										Ilya Samoylov
 
 UserMenuQuestions.jsp										Ilya Samoylov
 UserMenuQuestionsView.jsp									Ilya Samoylov
+
 UserMenuAlerts.jsp											Ilya Samoylov
-Alerts.jsp													Ilya Samoylov
+Alert.jsp													Ilya Samoylov
+AlertDelete.jsp													Ilya Samoylov
+
+
+

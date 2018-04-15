@@ -89,7 +89,7 @@
                			stmt.close();
             			con.close(); 
               	}catch(Exception ex){
-        			out.print("Error. Something went wrong placing bid");
+        			out.print("Error. Something went wrong Best selling users ");
         			out.print(ex);
         		}
                     

@@ -68,6 +68,7 @@
 				<%
 			badInput = true;
 			}
+			String insert_auction = "UPDATE `Auction` SET `buyer` = '" + username + "' WHERE auctionID = '" + auctionID + "'";
 			
 			if(!badInput){
 				//Check for item in database
@@ -83,7 +84,7 @@
 				insert_bid.setString(2, username);
 				insert_bid.setTimestamp(3, sqlDate);
 				insert_bid.setString(4, auctionID);
-
+				int insert_auctions = stmt.executeUpdate(insert_auction);
 				%>		
 
 				<script>
