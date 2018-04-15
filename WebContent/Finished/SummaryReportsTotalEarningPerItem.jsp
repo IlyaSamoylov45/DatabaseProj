@@ -1,9 +1,6 @@
-<%--Author: Mahim Gupta --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%--Author: Mahim Gupta --%><%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="com.cs336.pkg.*"%>
-<!--Import some libraries that have classes that we need -->
-<%@ page import="java.io.*,java.util.*,java.sql.*"%>
-<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+<!--Import some libraries that have classes that we need --><%@ page import="java.io.*,java.util.*,java.sql.*"%><%@ page import="javax.servlet.http.*,javax.servlet.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<style>
@@ -11,24 +8,18 @@
 			background-color: #97a08d;
 		}
 	</style>
-	
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>User Earnings</title>
-	</head>
-
-	<body>
-	
-	<font size = "5" color = "0e5938" >Information</font>
+			<title>User Earnings</title>
+		</head>
+		<body>
+			<center>
+				<p style="font-size:50px;">Item Earnings Report</p>
 			<table border="2">
-   			<tr>
-       			<td>GameID:  </td>
-       			<td>Earnings:  </td>
-       			
-       			
-   			</tr>
-
-	<%	
+				<tr>
+					<td>GameID:  </td>
+					<td>Earnings:  </td>
+				</tr><%	
 		try{
 			
 			//Get the database connection
@@ -60,20 +51,24 @@
 				<script>
 					alert("Error calculating earnings");
 					window.location.href = "SummaryReports.jsp"
-				</script>
-				<%
+				</script><%
 				badInput = true;
 			}
+			
+			
 			if(!badInput){
 			%>
-			
-			 <tr>
-            			<td><%=gameID%></td>
-						<td><%=total %></td>
-						
-					</tr>
-					</table>
-			<%
+				<tr>
+					<td><%=gameID%>
+					</td>
+					<td><%=total %>
+					</td>
+				</tr>
+			</table>
+			</center>
+			<form method="post" action="SummaryReports.jsp">
+					<input type="submit" value="Back">
+					</form><%
 			
 			}
 			
@@ -85,5 +80,7 @@
 			out.print(ex);
 		}
 	%>
-	</body>
-</html>
+			<br>
+				
+			</body>
+		</html>

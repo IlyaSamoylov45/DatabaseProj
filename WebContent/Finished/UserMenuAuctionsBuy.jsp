@@ -30,6 +30,14 @@
 			<font size = "5" color = "0e5938" >Want to Cancel?
 			</font>
 			
+		<center>
+			<font size = "5" color = "0e5938" >Search Using AuctionID Number</font>
+			<form method="post" action="UserMenuAuctionsHistory.jsp">
+				<input type="submit" value="View">
+			</form>
+		</center>
+			
+			
 			<br>
 			<form method="post" action="UserMenuAuctions.jsp">
 				<input type="submit" value="Back">

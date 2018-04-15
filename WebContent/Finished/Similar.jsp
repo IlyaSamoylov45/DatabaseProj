@@ -69,7 +69,6 @@
     	   				String information = All_auctions.getString("information");
     	   				String game_nameCheck = All_auctions.getString("game_name");
     	   				
-    	   				
     	   				if(buyer == null){
     	   					buyer = "No buyer yet.";
     	   				}
@@ -103,6 +102,24 @@
 					
 					<td><%=seller%></td>
 					<td><textarea name="content" rows="5" cols="20" readonly><%=information %></textarea></td>
+					<td><form method="post" action="UserMenuAuctionsBuySearchDoneView.jsp">
+										<input type="hidden" name="auctionID" value="<%= auctionID %>" />
+										<input type="hidden" name="gameID" value="<%= gameID %>" />
+										<input type="hidden" name="dateCreated" value="<%= dateCreated %>" />
+										<input type="hidden" name="dateClosing" value="<%= dateClosing %>" />
+										
+										<input type="hidden" name="initial_price" value="<%= initial_price %>" />
+										<input type="hidden" name="minimum_increase" value="<%= minimum_increase %>" />
+										<input type="hidden" name="buyer" value="<%= buyer %>" />
+										<input type="hidden" name="seller" value="<%= seller %>" />
+										
+										<input type="hidden" name="minimum_sell" value="<%= minimum_sell %>" />
+										<input type="hidden" name="sell_time" value="<%= sell_time %>" />
+										<input type="hidden" name="information" value="<%= information %>" />
+										<input type="hidden" name="game_name" value="<%= game_nameCheck %>" />
+										<input type="hidden" name="rating" value="<%= "M/E/T" %>" />
+								   		<input id="button" type="submit" value="View" >
+								   	</form>		
 					</tr>
    			<%
       				}}
