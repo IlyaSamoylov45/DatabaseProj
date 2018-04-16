@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS `project`;
 CREATE DATABASE  IF NOT EXISTS `project`;
 USE `project`;
 
-DROP TABLE IF EXISTS `Admin`;
+DROP TABLE IF EXISTS `Administrator`;
 DROP TABLE IF EXISTS `EndUser`;
 DROP TABLE IF EXISTS `Cust_Representative`;
 DROP TABLE IF EXISTS `Account`;
@@ -547,13 +547,14 @@ CREATE TABLE `Alert`(
 	`username` CHAR(50) BINARY,
     `auctionID` INTEGER,
 	`gameID` INTEGER,
+    `alertTime` DATETIME,
     PRIMARY KEY(`username`, `gameID`),
     FOREIGN KEY(`username`) REFERENCES `Account`(`username`) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(`gameID`) REFERENCES `VideoGame`(`gameID`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 /*================================================================================================================*/
-
+  
 /*================================================================================================================*/
 INSERT INTO `Account`(`username`, `password`) VALUES ('admin', 'admin');
 INSERT INTO `Administrator`(`username`) VALUES ('admin'); 
@@ -575,8 +576,11 @@ INSERT INTO `EndUser`(`username`, `firstname`, `lastname`, `address`, `email`) V
 INSERT INTO `VideoGame`(`gameID`, `game_name`,`genre`, `platform`, `condition`, `total_players`) VALUES (1, 'gametwo', 'Action', 'Xbox', 'Not Working', 'Single-Player');
 INSERT INTO `VideoGame`(`gameID`, `game_name`,`genre`, `platform`, `condition`, `total_players`) VALUES (2, 'gameone', 'FPS', 'Xbox', 'Used', 'Co-op');
 
+INSERT INTO `Everyone`(`gameID`, `mild_language`, `mild_violence`) VALUES (1, 0, 0);
 
-INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (1, 1, NOW(), NOW(), 20.00, 5.00, null, 'testing', 5.00, NOW(), 'ey');
+
+
+INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (1, 1, NOW(), NOW(), 20.00, 50000.00, null, 'testing', 5.00, NOW(), 'ey');
 INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (2, 1, NOW(), NOW(), 20.00, 5.00, null, 'testing', 5.00, NOW(), 'ey');
 INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (3, 1, NOW(), NOW(), 20.00, 5.00, null, 'testing', 5.00, NOW(), 'ey');
 INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (4, 1, NOW(), NOW(), 20.00, 5.00, null, 'testing', 5.00, NOW(), 'ey');
@@ -588,8 +592,7 @@ INSERT INTO `Bid`(`amount`,`bidder`, `time_of_bid`, `auctionID`) VALUES (1000.00
 INSERT INTO `Bid`(`amount`,`bidder`, `time_of_bid`, `auctionID`) VALUES (2340.00, 'testingthree', NOW(), 1);
 INSERT INTO `Bid`(`amount`,`bidder`, `time_of_bid`, `auctionID`) VALUES (5420.00, 'testingtwo', NOW(), 1);
 INSERT INTO `Bid`(`amount`,`bidder`, `time_of_bid`, `auctionID`) VALUES (54350.00, 'testing', NOW(), 1);
-INSERT INTO `Bid`(`amount`,`bidder`, `time_of_bid`, `auctionID`) VALUES (53453450.00, 'testingtwo', NOW(), 1);
-INSERT INTO `Bid`(`amount`,`bidder`, `time_of_bid`, `auctionID`) VALUES (553453450.00, 'testingthree', NOW(), 1);
+INSERT INTO `Bid`(`amount`,`bidder`, `time_of_bid`, `auctionID`) VALUES (55450.00, 'testingthree', NOW(), 1);
 
 /**
 INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (100, 'testing',NOW(),1); 
@@ -630,4 +633,7 @@ INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (100, '
 INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (100, 'testing',NOW(),6); 
 INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (100, 'testing',NOW(),7); 
 INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (100, 'testing',NOW(),8); 
+
+
+SELECT A.*, G.game_name FROM Auction A, VideoGame G, Bid B WHERE A.`gameID` = G.`gameID` AND BINARY A.seller = BINARY '" + testing + "' AND B.auctionID = A.auctionID AND B.amount > A.minimum_sell
 **/

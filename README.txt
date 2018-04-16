@@ -138,7 +138,7 @@ UserMenuQuestionsView.jsp									Ilya Samoylov
 
 UserMenuAlerts.jsp											Ilya Samoylov
 Alert.jsp													Ilya Samoylov
-AlertDelete.jsp													Ilya Samoylov
+AlertDelete.jsp												Ilya Samoylov
 
 
 
