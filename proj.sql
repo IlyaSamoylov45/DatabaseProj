@@ -594,6 +594,23 @@ INSERT INTO `Bid`(`amount`,`bidder`, `time_of_bid`, `auctionID`) VALUES (5420.00
 INSERT INTO `Bid`(`amount`,`bidder`, `time_of_bid`, `auctionID`) VALUES (54350.00, 'testing', NOW(), 1);
 INSERT INTO `Bid`(`amount`,`bidder`, `time_of_bid`, `auctionID`) VALUES (55450.00, 'testingthree', NOW(), 1);
 
+/*================================================================================================================*/
+/*												Test															  */
+/*================================================================================================================*/
+
+INSERT INTO `Account`(`username`, `password`) VALUES ('endusr1', 'pass');
+INSERT INTO `EndUser`(`username`, `firstname`, `lastname`, `address`, `email`) VALUES ('endusr1', 'Bruce','Wayne','1 Twinwig Apt 36','brucewayne@gmail.com'); 
+
+INSERT INTO `Account`(`username`, `password`) VALUES ('endusr2', 'pass');
+INSERT INTO `EndUser`(`username`, `firstname`, `lastname`, `address`, `email`) VALUES ('endusr2', 'John','Smith','35 Hamilton St','JohnSmith@gmail.com'); 
+
+INSERT INTO `Account`(`username`, `password`) VALUES ('admin', 'pass');
+INSERT INTO `Administrator`(`username`) VALUES ('admin'); 
+
+INSERT INTO `Question`(`questionID`, `sender`, `question`, `content`) VALUES (1, 'endusr1', 'What is 9 + 11?', 'Lorem ipsum dolor sit amet, ad iisque facilis duo, q');
+INSERT INTO `Email`(`messageID`, `from`, `to`, `dateTime`, `content`, `subject`) VALUES (1, 'endusr1', 'endusr2', NOW(), 'Lorem ipsum dolor sit amet, ad iisque facilis duo, quod officiis quaestio et eum. Vel mazim choro at, feugait iudicabit et nec. Id vidisse fastidii mei, dicam gubergren sea id, pri erant postea forensibus in. Qui hendrerit vulputate cu, qui cu justo voluptatibus.', 'Lorem');
+
+
 /**
 INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (100, 'testing',NOW(),1); 
 INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (100, 'testing',NOW(),5); 
