@@ -616,7 +616,9 @@ INSERT INTO `Cust_Representative` (`username`,  `firstname`,`lastname`,`email`) 
 INSERT INTO `Account`(`username`, `password`) VALUES ('admin', 'pass');
 INSERT INTO `Administrator`(`username`) VALUES ('admin'); 
 
-INSERT INTO `Question`(`questionID`, `sender`, `question`, `content`) VALUES (1, 'endusr1', 'What is 9 + 11?', 'Lorem ipsum dolor sit amet, ad iisque facilis duo, q');
+INSERT INTO `Question`(`questionID`, `sender`, `question`, `content`) VALUES (1, 'endusr1', 'What is 9 + 10?', 'Lorem ipsum dolor sit amet, ad iisque facilis duo, q');
+INSERT INTO `Answer`(`answerID` ,`responder` ,  `answer` ) VALUES (1,'rep','its 21!');
+
 INSERT INTO `Email`(`messageID`, `from`, `to`, `dateTime`, `content`, `subject`) VALUES (1, 'endusr1', 'endusr2', NOW(), 'Lorem ipsum dolor sit amet, ad iisque facilis duo, quod officiis quaestio et eum. Vel mazim choro at, feugait iudicabit et nec. Id vidisse fastidii mei, dicam gubergren sea id, pri erant postea forensibus in. Qui hendrerit vulputate cu, qui cu justo voluptatibus.', 'Lorem');
 
 INSERT INTO `VideoGame`(`gameID`, `game_name`,`genre`, `platform`, `condition`, `total_players`) VALUES (1, 'batman arkham knight', 'Action', 'Xbox One', 'Not Working', 'Single-Player');
@@ -628,7 +630,20 @@ INSERT INTO `Teen`(`gameID` ,`suggestive_themes`, `violence`, `crude_humor` , `m
 INSERT INTO `VideoGame`(`gameID`, `game_name`,`genre`, `platform`, `condition`, `total_players`) VALUES (3, 'State of Decay 2', 'Survival', 'Xbox One', 'New', 'Co-op');
 INSERT INTO `Mature`(`gameID` ,`violence` , `blood_gore`, `sexual_content` , `strong_language`, `drug_use`) VALUES (3,1,1,1,0,1);
 
-INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (1, 1, NOW(), DATE_ADD(now(), INTERVAL 10 DAY), 20.00, 5.00, null, 'endusr2', 5.00, NOW(), 'ey');
+INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (4, 4, NOW(), NOW(), 20.00, 5.00, null, 'endusr1', 100.00, null, 'Batmanz iz coolzzest');
+INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (1, 1, NOW(), DATE_ADD(now(), INTERVAL 10 DAY), 20.00, 5.00, null, 'endusr2', 50.00, null, 'Batmanz iz coolz');
+INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (2, 2, NOW(), DATE_ADD(now(), INTERVAL 5 DAY), 50.00, 10.00, 'enduser3', 'endusr1', 50.00,  now(), 'League of Lego: Don\'t step on it.');
+INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (3, 3, NOW(), DATE_ADD(now(), INTERVAL 15 DAY), 10.00, 5.00, null, 'endusr3', 20.00, null, 'Lorem Ipsum');
+INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (20, 'endusr4',NOW(),1); 
+INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (25, 'endusr1',NOW(),1); 
+INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (30, 'endusr4',NOW(),1); 
+INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (35, 'endusr1',NOW(),1); 
+INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (40, 'endusr4',NOW(),1); 
+INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (20, 'endusr2',NOW(),3); 
+INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (25, 'endusr4',NOW(),3); 
+INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (30, 'endusr2',NOW(),3); 
+INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (35, 'endusr4',NOW(),3); 
+INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (100, 'endusr2',NOW(),3); 
 
 /**
 INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (100, 'testing',NOW(),1); 
