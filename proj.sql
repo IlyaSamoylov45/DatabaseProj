@@ -604,12 +604,31 @@ INSERT INTO `EndUser`(`username`, `firstname`, `lastname`, `address`, `email`) V
 INSERT INTO `Account`(`username`, `password`) VALUES ('endusr2', 'pass');
 INSERT INTO `EndUser`(`username`, `firstname`, `lastname`, `address`, `email`) VALUES ('endusr2', 'John','Smith','35 Hamilton St','JohnSmith@gmail.com'); 
 
+INSERT INTO `Account`(`username`, `password`) VALUES ('endusr3', 'pass');
+INSERT INTO `EndUser`(`username`, `firstname`, `lastname`, `address`, `email`) VALUES ('endusr3', 'Liza','Wood','55 Washington St','liazawood@gmail.com'); 
+
+INSERT INTO `Account`(`username`, `password`) VALUES ('endusr4', 'pass');
+INSERT INTO `EndUser`(`username`, `firstname`, `lastname`, `address`, `email`) VALUES ('endusr4', 'Anisa','Woodsworth','55 Washington St','anisawoodsworth@gmail.com'); 
+
+INSERT INTO `Account`(`username`, `password`) VALUES ('rep', 'pass');
+INSERT INTO `Cust_Representative` (`username`,  `firstname`,`lastname`,`email`) VALUES ('rep', 'Reggie', 'Tomwat', 'reggietomwat@yahoo.com');
+    
 INSERT INTO `Account`(`username`, `password`) VALUES ('admin', 'pass');
 INSERT INTO `Administrator`(`username`) VALUES ('admin'); 
 
 INSERT INTO `Question`(`questionID`, `sender`, `question`, `content`) VALUES (1, 'endusr1', 'What is 9 + 11?', 'Lorem ipsum dolor sit amet, ad iisque facilis duo, q');
 INSERT INTO `Email`(`messageID`, `from`, `to`, `dateTime`, `content`, `subject`) VALUES (1, 'endusr1', 'endusr2', NOW(), 'Lorem ipsum dolor sit amet, ad iisque facilis duo, quod officiis quaestio et eum. Vel mazim choro at, feugait iudicabit et nec. Id vidisse fastidii mei, dicam gubergren sea id, pri erant postea forensibus in. Qui hendrerit vulputate cu, qui cu justo voluptatibus.', 'Lorem');
 
+INSERT INTO `VideoGame`(`gameID`, `game_name`,`genre`, `platform`, `condition`, `total_players`) VALUES (1, 'batman arkham knight', 'Action', 'Xbox One', 'Not Working', 'Single-Player');
+INSERT INTO `Everyone`(`gameID`, `mild_language`, `mild_violence`) VALUES (1, 1, 1);
+
+INSERT INTO `VideoGame`(`gameID`, `game_name`,`genre`, `platform`, `condition`, `total_players`) VALUES (2, 'league of legends', 'MOBA', 'PC', 'Used', 'Online');
+INSERT INTO `Teen`(`gameID` ,`suggestive_themes`, `violence`, `crude_humor` , `minimal_blood`, `gambling`, `strong_language`) VALUES(2,1,1,1,1,0,1);
+
+INSERT INTO `VideoGame`(`gameID`, `game_name`,`genre`, `platform`, `condition`, `total_players`) VALUES (3, 'State of Decay 2', 'Survival', 'Xbox One', 'New', 'Co-op');
+INSERT INTO `Mature`(`gameID` ,`violence` , `blood_gore`, `sexual_content` , `strong_language`, `drug_use`) VALUES (3,1,1,1,0,1);
+
+INSERT INTO `Auction`(`auctionID`,`gameID`, `dateCreated`, `dateClosing`, `initial_price` , `minimum_increase`, `buyer`, `seller`, `minimum_sell`,`sell_time`,`information`) VALUES (1, 1, NOW(), DATE_ADD(now(), INTERVAL 10 DAY), 20.00, 5.00, null, 'endusr2', 5.00, NOW(), 'ey');
 
 /**
 INSERT INTO `Bid`(`amount`, `bidder`, `time_of_bid`, `auctionID`) VALUES (100, 'testing',NOW(),1); 
